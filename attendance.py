@@ -7,7 +7,7 @@ headers = {
     "Origin": "https://academia.srmist.edu.in",
 }
 
-url = "https://academia.srmist.edu.in/liveViewHeader.do"
+url = "https://academia.srmist.edu.in/srm_university/academia-academic-services/page/My_Time_Table_2020_21_22"
 info_and_tt = None
 
 
