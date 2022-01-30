@@ -1,0 +1,129 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.coffee-header{
+  position: relative;
+  left: 0px;
+  right: 0px;
+  height: 100px;
+  width: 100%;
+  background: #003973;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  z-index: 100;
+  margin-top: -20px;
+}
+
+.coffee-nav{
+  float: right;
+  margin-top: -30px;
+  margin-left: 40px;
+}
+.coffee-nav2{
+  float: right;
+  margin-top: -26px;
+  margin-left: 40px;
+}
+
+.coffee-nav a{
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+  padding-right: 20px;
+  padding-top: 70%;
+  display: inline-block;
+  color: black;
+}
+
+.coffee-nav2 a{
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+  padding-right: 20px;
+  padding-top: 70%;
+  display: inline-block;
+}
+.coffee-footer{
+  position: relative;
+  left: 0px;
+  right: 0px;
+  height: 100px;
+  width: 100%;
+  background: #003973;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  z-index: 100;
+  margin-top: 214px;
+}
+
+.foot1{
+  
+  margin-top: 200px;
+  margin-right: 100px;
+  margin-left: 20px;
+}
+.foot2{
+  
+  margin-top: -95px;
+  margin-left: 610px;
+}
+.foot3{
+  
+  margin-top: -95px;
+  margin-left: 1233px;
+}
+
+.foot1 h3{
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+  padding-right: 20px;
+  padding-top: 0%;
+  display: inline-block;
+  color: black;
+}
+
+.foot2 h3{
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+  padding-right: 30px;
+  padding-left: 10px;
+  padding-top: 0%;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.foot3 h3{
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+  padding-right: 20px;
+  padding-top: -50%;
+  display: inline-block;
+}
+
+h1{
+	color: white;
+	margin-top: 240px;
+	margin-left: 670px;
+}
+
+h2{
+	color: white;
+	margin-left: 640px;
+}

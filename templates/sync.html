@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css')}}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/owl.carousel.min.css')}}">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css')}}">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+  <style>
+		body {
+			background-image: url("{{ url_for('static', filename='images/background.jpg')}}");
+		}
+	</style>
+  <title>Time Table</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="container">
+      <center><h2 class="mb-5">Enter Gmeet Links</h2></center>
+      <div class="table-responsive custom-table-responsive">
+        <form method='POST'>
+          {{ links.csrf_token }}
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th scope="col">Slot</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Type</th>
+              <th scope="col">Gmeet</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for slot, pp in tt.items() %}
+            <tr scope="row">
+              <td>{{ "-".join(slot) }}</td>
+              <td>{{ pp[0] }}</td>
+              <td>{{ pp[1] }}</td>
+              <td>{{ links.link.append_entry() }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <h2 class="mb-5">Add Events from this month to {{ links.months }}</h2>
+        <input type="submit" name="" placeholder="Submit" value="Submit">
+        </form>
+        {% if msg %}
+        <h2 class="mb-5">{{ msg }}</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+</body>
+
+</html>

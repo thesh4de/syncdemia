@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css')}}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/owl.carousel.min.css')}}">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css')}}">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+  <style>
+		body {
+			background-image: url("{{ url_for('static', filename='images/background.jpg')}}");
+		}
+	</style>
+  <title>Time Table</title>
+</head>
+
+<body>
+
+  <div class="content">
+    <div class="container">
+      <div class="table-responsive custom-table-responsive">
+        <table class="table custom-table">
+          <tbody>
+            {% for i in range(0, perlist|count, 4) %}
+            <tr>
+              <th scope="row">{{ perlist[i] }}</th>
+              <td>{{ perlist[i + 1] }}</td>
+              <th scope="row">{{ perlist[i + 2] }}</th>
+              <td>{{ perlist[i + 3] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% if not isholiday %}
+  <div class="content">
+    <div class="container">
+      <h2 class="mb-5">Day Order: {{ do }}</h2>
+      <div class="table-responsive custom-table-responsive">
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Type</th>
+              <th scope="col">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in range(time|count) if periods[t] %}
+            <tr scope="row">
+              <td>{{ time[t] }}</td>
+              <td>{{ periods[t][0] }}</td>
+              <td>{{ periods[t][1] }}</td>
+              <td>{{ periods[t][2] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+</body>
+
+</html>

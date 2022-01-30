@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styling.css')}}">
+	<style>
+		body {
+			background-image: url("{{ url_for('static', filename='images/background.jpg')}}");
+		}
+	</style>
+</head>
+
+<body>
+	<div class="loginbox">
+		<img src="{{ url_for('static', filename='images/loginlogo.jpg')}}" class="loglogo">
+		<h1>Login</h1>
+		<form method="POST">
+			{{ form.csrf_token }}
+			<p>Mail</p>
+			{{ form.username(placeholder="Enter mail ID") }}
+			<p>Password</p>
+			{{ form.password(placeholder="Enter Password") }}
+			<input type="submit" name="" placeholder="Login" value="Login">
+		</form>
+		{% if error %}
+		<p class="error">{{ error }}</p>
+		{% endif %}
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .bgimgpic {
+    margin-top: 20px;
+    background-color: black;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+  }
+  
+  .teamtext {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+  }
+  
+  .tejaspic{
+    margin-top: 40px;
+  }
+
+  .reshpic{
+    margin-top: 40px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .column1 {
+    float: left;
+    width: 33.33%;
+    padding-bottom:240px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 105px;
+    background: #8E0E00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  .column2 {
+    float: left;
+    width: 33.33%;
+    padding-top: 40px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 105px; 
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+  }
+  .column3 {
+    float: left;
+    width: 33.33%;
+    padding-bottom:20px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 105px;
+    background: #20002c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .shamu{
+    font-size: 145%;
+    padding-bottom: 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 10px;
+    color:black;
+    animation-name: example;
+    animation-duration: 4s;
+    margin-top: -15px;
+    
+  }
+  .shamu:hover{
+    font-family:"Times New Roman", Times, serif;
+    color: white;
+  
+  }
+  .column3:hover{
+    background-color:#b2b266;
+  }
+  
+  @keyframes example {
+    from {color:#800000;}
+    to {color: yellow;}
+  }
+  .ganesh{
+    font-size: 145%;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    animation-name: examplegan;
+    animation-duration: 4s;
+    margin-top: -50px;
+  }
+  .ganesh:hover{
+    font-family:"Times New Roman", Times, serif;
+    color: white;
+  
+  
+  }
+  .pranai{
+    font-size: 140%;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    padding-bottom: 40px;
+    margin-top: -35px;
+    animation-name: examplepra;
+    animation-duration: 4s;
+    margin-top: -70px;
+  
+  
+  }
+  .pranai:hover{
+    font-family:"Times New Roman", Times, serif;
+    color: white;
+  
+  }
+  @keyframes examplegan {
+    from {color:#2e2e1f;}
+    to {color: #cc7a00;}
+  }
+  @keyframes examplepra {
+    from {color:#ffffff;}
+    to {color: #ff9900;}
+  }
+  .column2:hover{
+    background-color: black;
+  
+  }
+  .pranailinks{
+    padding: 10px;
+    padding-right: 10px;
+    margin-top: -40px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+  }
+  .ganeshlinks{
+    margin-top: 30px;
+  }
+
+  .coffee-header{
+  position: relative;
+  left: 0px;
+  right: 0px;
+  height: 100px;
+  width: 100%;
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  z-index: 100;
+  margin-top: -20px;
+}
+
+.coffee-nav{
+  float: right;
+  margin-top: -30px;
+  margin-left: 40px;
+}
+
+.coffee-nav a{
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+  padding-right: 20px;
+  padding-top: 70%;
+  display: inline-block;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+.quote{
+  margin-left: 490px;
+  margin-top: 90px;
+}

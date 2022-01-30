@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <style>
+		body {
+			background-image: url("{{ url_for('static', filename='images/background.jpg')}}");
+		}
+	</style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/bootstrap/instant/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='fonts/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/stylefinalhomepage.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand">SYNCDEMIA</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/details" class="smoothscroll">Main</a></li>
+          <li class="active"><a href="/sync" class="smoothscroll">Sync</a></li>
+          {% if log %}
+          <li class="active"><a href="/logout" class="smoothscroll">Logout</a></li>
+          {% else %}
+          <li class="active"><a href="/login" class="smoothscroll">Login</a></li>
+          {% endif %}
+          <li class="active"><a class="smoothscroll">About Us</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+  <div id="contactwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <h4>Make your life easier with our</h4>
+          <h1>SYNCDEMIA</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
