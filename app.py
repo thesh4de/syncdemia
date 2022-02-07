@@ -26,7 +26,7 @@ app.secret_key = "secret69basedgamer"
 app.config["SESSION_TYPE"] = "filesystem"
 #app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
-MONTHS = [(5, "May"), (6, "June"), (7, "July"), (8, "August"), (9, "September"), (10, "October"), (11, "November"), (12, "December")]
+MONTHS = [(1, "January"), (2, "February"), (3, "March"), (4, "April"), (5, "May"), (6, "June"), (7, "July"), (8, "August"), (9, "September"), (10, "October"), (11, "November"), (12, "December")]
 
 
 #db = SQLAlchemy(app)
@@ -100,7 +100,9 @@ def authorize():
     flow = Flow.from_client_secrets_file(CLIENT_SECRET, scopes=SCOPES)
     flow.redirect_uri = url_for('oauth2callback', _external=True)
     auth_url, state = flow.authorization_url(
-        access_type='offline', include_granted_scopes='true', prompt='consent')
+        access_type='offline', 
+        include_granted_scopes='true', prompt='consent'
+        )
     session['state'] = state
     return redirect(auth_url)
 

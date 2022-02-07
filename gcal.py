@@ -1,4 +1,5 @@
 from googleapiclient.discovery import build
+from datetime import date
 import datab
 
 
@@ -6,7 +7,7 @@ def get_periods_for_slots(time_table, slots):
     periods = []
     for p in slots:
         try:
-            periods.append(time_table[tuple(filter(None, p.split("-")))])
+            periods.append(time_table[p])
         except KeyError:
             periods.append(None)
     return periods
@@ -14,7 +15,8 @@ def get_periods_for_slots(time_table, slots):
 
 def getrecur(dates, time):
     time = time.replace(":", "")
-    r_list = ["2021" + d.replace("-", "") + "T" + time + "00" for d in dates]
+    today = date.today()
+    r_list = [str(today.year) + d.replace("-", "") + "T" + time + "00" for d in dates]
     r_string = ",".join(r_list)
     return r_string
 
@@ -76,6 +78,7 @@ def calsync(batch_no, time_table, creds, months=1):
 
     time = datab.gethead()
     time = [t.split("-") for t in time]
+    today = date.today()
 
     for do in range(1, 5 + 1):
         dates = datab.getdatesofdo(do, months)
@@ -89,9 +92,9 @@ def calsync(batch_no, time_table, creds, months=1):
             event['description'] = period[1]
             if period[3]:
                 event['description'] += "\n" + "Meet Link: " + period[3]
-            event['start']['dateTime'] = '2021-' + \
+            event['start']['dateTime'] = str(today.year) + '-' + \
                 dates[0] + 'T' + time[count][0] + ":00"
-            event['end']['dateTime'] = '2021-' + \
+            event['end']['dateTime'] = str(today.year) + '-' + \
                 dates[0] + 'T' + time[count][1] + ":00"
             event['recurrence'] = ["RDATE;VALUE=DATE-TIME:" +
                                    getrecur(dates[1:], time[count][0])]
@@ -99,4 +102,3 @@ def calsync(batch_no, time_table, creds, months=1):
                 calendarId=syncdemia['id'], body=event))
     batch.execute()
     return "Calendar Created"
-
