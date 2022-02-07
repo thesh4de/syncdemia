@@ -1,16 +1,16 @@
 import requests
 import json
 
-headers = {'Origin': 'https://academia.srmist.edu.in/',
+HEADERS = {'Origin': 'https://academia.srmist.edu.in/',
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0'}
-url = "https://academia.srmist.edu.in/accounts/signin.ac"
+URL = "https://academia.srmist.edu.in/accounts/signin.ac"
 
 
 def getoken(username, password):
     payload = {'username': username, 'password': password, 'client_portal': 'true', 'portal': '10002227248', 'servicename': 'ZohoCreator',
-               'serviceurl': 'https://academia.srmist.edu.in/', 'grant_type': 'password', 'service_language': 'en', 'is_ajax': 'true'}
+               'serviceurl': 'https://academia.srmist.edu.in/', 'grant_type': 'password', 'service_language': 'en', 'is_ajax': 'true', 'dcc': 'true'}
 
-    res = requests.post(url, data=payload, headers=headers)
+    res = requests.post(URL, data=payload, headers=HEADERS)
     json_data = json.loads(res.text)
 
     if "error" in json_data:
@@ -23,7 +23,7 @@ def getoken(username, password):
 
     else:
         session = requests.Session()
-        session.get(json_data['data']['oauthorize_uri'], headers=headers)
+        session.get(json_data['data']['oauthorize_uri'], headers=HEADERS)
         token = session.cookies.get_dict()
         json_o = {"status": "success", "token": token}
         return json_o
